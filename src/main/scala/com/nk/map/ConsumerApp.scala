@@ -12,7 +12,7 @@ import scala.util.{Failure, Success}
 
 object ConsumerApp {
   def main(args: Array[String]): Unit = {
-    println("Hello from hBaseWriter")
+    println("Hello from Consumer")
 
     implicit val system: ActorSystem = ActorSystem("consumer-sample")
     implicit val materializer: Materializer = ActorMaterializer()
@@ -22,7 +22,7 @@ object ConsumerApp {
         .withBootstrapServers("localhost:9092")
 
     val done = Consumer
-      .plainSource(consumerSettings, Subscriptions.topics("Awesome-Topic"))
+      .plainSource(consumerSettings, Subscriptions.topics("Alpakkas-rock"))
       .runWith(Sink.foreach(println))
 
     implicit val ec: ExecutionContextExecutor = system.dispatcher

@@ -1,0 +1,10 @@
+version: "3"
+services:
+  cassandra:
+    image: "cassandra:latest"
+    command: "sh /cassandra-init.sh"
+    healthcheck:
+      test: ["CMD-SHELL", "[ $$(nodetool statusgossip) = running ]"]
+    volumes:
+      - "./create_db.cql:/create_db.cql"
+      - "./cassandra-init.sh:/cassandra-init.sh"

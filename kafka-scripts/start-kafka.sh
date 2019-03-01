@@ -1,8 +1,8 @@
 #!/bin/bash
 
-readonly kafka_dir=~/kafka_2.11-2.0.0
+readonly kafka_dir=~/kafka/2.1.0
 
 cd ${kafka_dir}
 
-bin/kafka-server-start.sh config/server.properties
+bin/kafka-server-start config/server.properties
 

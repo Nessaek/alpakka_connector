@@ -27,7 +27,7 @@ object ProducerApp {
 
     val done: Future[Done] =
       Source(1 to 100)
-        .map(value => new ProducerRecord[String, String]("Awesome-Topic", "msg " + value))
+        .map(value => new ProducerRecord[String, String]("Alpakkas-rock", "msg " + value))
         .runWith(Producer.plainSink(producerSettings))
 
     implicit val ec: ExecutionContextExecutor = system.dispatcher
