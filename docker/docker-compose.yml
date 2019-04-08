@@ -8,3 +8,5 @@ services:
     volumes:
       - "./create_db.cql:/create_db.cql"
       - "./cassandra-init.sh:/cassandra-init.sh"
+    ports:
+      - "9042:9042"
